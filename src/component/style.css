@@ -1,0 +1,128 @@
+:root{
+  --bg1: #fbe9fb;
+  --bg2: #efe7ff;
+  --card-shadow: rgba(16,24,40,0.06);
+}
+
+/* page container for centering */
+.page{
+  width:100%;
+  max-width:920px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding: 40px;
+}
+
+/* card that contains svg + center */
+.card{
+  position:relative;
+  width:"30rem";
+  height:"30rem";
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+/* center white circle content */
+.center{
+  position:absolute;
+  z-index:5;
+  width:230px;
+  height:230px;
+  border-radius:50%;
+  background:rgba(255,255,255,0.96);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow: 0 10px 30px rgba(16,24,40,0.08);
+  border: 6px solid rgba(255,255,255,0.6);
+}
+
+.inner-circle{
+  text-align:center;
+}
+
+.icon{
+  font-size:34px;
+  margin-bottom:8px;
+}
+
+.title{
+  margin:0;
+  font-size:28px;
+  letter-spacing:1px;
+  color:#1f1f1f;
+}
+
+.sub{
+  margin-top:6px;
+  color:#9aa0b1;
+  font-weight:600;
+}
+
+/* SVG ring sits behind the center */
+.progress-ring{
+  position:relative;
+  z-index:2;
+  pointer-events:none;
+}
+
+/* background ring softer */
+.ring-bg{
+  filter: blur(0.2px);
+}
+
+/* tag (small attached circle) */
+.tag{
+  position:absolute;
+  left: -18px; /* attach to left of card */
+  top: 78px; /* tune vertically */
+  z-index:6;
+  transform: translateX(-20%) rotate(-6deg);
+}
+
+.tag-inner{
+  width:86px;
+  height:86px;
+  border-radius:50%;
+  background:linear-gradient(180deg, rgba(255,255,255,0.96), rgba(250,250,255,0.9));
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  box-shadow: 0 8px 20px rgba(27,31,35,0.06);
+  border: 6px solid white;
+  text-align:center;
+}
+
+.days-label{
+  font-size:10px;
+  color:#8b8f9a;
+  font-weight:700;
+  letter-spacing:1px;
+}
+
+.days-num{
+  font-size:22px;
+  font-weight:800;
+  margin-top:2px;
+  color:#1f1f1f;
+}
+
+.small-time{
+  margin-top:6px;
+  font-size:10px;
+  color:#6b6f78;
+  display:flex;
+  gap:6px;
+  align-items:center;
+}
+
+/* responsive */
+@media (max-width:480px){
+  .card{ width:300px; height:300px }
+  .center{ width:190px; height:190px }
+  .tag{ left:-12px; top:68px }
+  .tag-inner{ width:70px; height:70px }
+}
