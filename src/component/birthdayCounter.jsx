@@ -156,7 +156,7 @@ export default function BirthdayCounter({ className = "" }) {
 
     return (
         <>
-            <Stack direction={"row"} gap={"2rem"}>
+            <Stack direction={"row"} gap={"2.5rem"}>
                 <Stack
                     direction="column"
                     alignItems={"center"}
@@ -164,20 +164,19 @@ export default function BirthdayCounter({ className = "" }) {
                 >
                     <Typography
                         sx={{
-                            fontSize: "6rem",
+                            fontSize: "5.5rem",
                             m: 0,
-                            height: "100px !important",
+                            height: "110px !important",
                             fontWeight: "700", // bold
-                            m: 0,
-                            transform: "scaleY(1.3)",
+                            transform: "scaleY(2) scaleX(1.2)",
                             lineHeight: 1,
                             letterSpacing: "0.1em",
-                            fontFamily: `"Roboto Mono", monospace`,
+                            color: "#d1d0cd"
                         }}
                     >
                         {String(days).padStart(2, "0")}
                     </Typography>
-                    <Typography sx={{ fontSize: "0.8rem", fontWeight: "bold" }}>
+                    <Typography sx={{ fontSize: "1rem", fontWeight: "bold", color: "#d1d0cd" }}>
                         Days
                     </Typography>
                 </Stack>
@@ -189,20 +188,20 @@ export default function BirthdayCounter({ className = "" }) {
                 >
                     <Typography
                         sx={{
-                            fontSize: "6rem",
+                            fontSize: "5.5rem",
                             m: 0,
-                            height: "100px !important",
+                            height: "110px !important",
                             fontWeight: "700", // bold
                             m: 0,
-                            transform: "scaleY(1.3)",
+                            transform: "scaleY(2) scaleX(1.2)",
                             lineHeight: 1,
                             letterSpacing: "0.1em",
-                            fontFamily: `"Roboto Mono", monospace`,
+                            color: "#d1d0cd"
                         }}
                     >
                         {String(hours).padStart(2, "0")}
                     </Typography>
-                    <Typography sx={{ fontSize: "0.8rem", fontWeight: "bold" }}>
+                    <Typography sx={{ fontSize: "1rem", fontWeight: "bold", color: "#d1d0cd" }}>
                         {"Hours"}
                     </Typography>
                 </Stack>
@@ -214,20 +213,20 @@ export default function BirthdayCounter({ className = "" }) {
                 >
                     <Typography
                         sx={{
-                            fontSize: "6rem",
+                            fontSize: "5.5rem",
                             m: 0,
-                            height: "100px !important",
+                            height: "110px !important",
                             fontWeight: "700", // bold
                             m: 0,
-                            transform: "scaleY(1.3)",
+                            transform: "scaleY(2) scaleX(1.2)",
                             lineHeight: 1,
                             letterSpacing: "0.1em",
-                            fontFamily: `"Roboto Mono", monospace`,
+                            color: "#d1d0cd"
                         }}
                     >
                         {String(minutes).padStart(2, "0")}
                     </Typography>
-                    <Typography sx={{ fontSize: "0.8rem", fontWeight: "bold" }}>
+                    <Typography sx={{ fontSize: "1rem", fontWeight: "bold", color: "#d1d0cd" }}>
                         {"Minutes"}
                     </Typography>
                 </Stack>
@@ -239,20 +238,20 @@ export default function BirthdayCounter({ className = "" }) {
                 >
                     <Typography
                         sx={{
-                            fontSize: "6rem",
+                            fontSize: "5.5rem",
                             m: 0,
-                            height: "100px !important",
+                            height: "110px !important",
                             fontWeight: "700", // bold
                             m: 0,
-                            transform: "scaleY(1.3)",
+                            transform: "scaleY(2) scaleX(1.2)",
                             lineHeight: 1,
                             letterSpacing: "0.1em",
-                            fontFamily: `"Roboto Mono", monospace`,
+                            color: "#d1d0cd"
                         }}
                     >
                         {String(seconds).padStart(2, "0")}
                     </Typography>
-                    <Typography sx={{ fontSize: "0.8rem", fontWeight: "bold" }}>
+                    <Typography sx={{ fontSize: "1rem", fontWeight: "bold", color: "#d1d0cd" }}>
                         {"Seconds"}
                     </Typography>
                 </Stack>

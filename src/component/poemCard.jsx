@@ -1,22 +1,38 @@
-
 import backgroundCard from "../assets/images/background.jpeg";
 import frontCard from "../assets/images/front.jpeg";
+import VolumeDownAltIcon from "@mui/icons-material/VolumeDownAlt";
+import VolumeMuteIcon from "@mui/icons-material/VolumeMute";
+import poem1 from "../assets/audio/poem1.m4a";
 
-
-import React, { useState } from "react";
-import { Box } from "@mui/material";
+import React, { useEffect, useRef, useState } from "react";
+import { Box, IconButton } from "@mui/material";
 import { motion } from "framer-motion";
+import { POEMS_FOR_HER } from "../utils/constants";
+import { TypeAnimation } from "react-type-animation";
 
-const PoemCard = () => {
-  const [flipped, setFlipped] = useState(false);
+const PoemCard = ({ _flipped, backgroundRef }) => {
+  const [flipped, setFlipped] = useState(_flipped);
+  const audioRef = useRef(null);
 
   const handleClick = (e) => {
     const cardRect = e.currentTarget.getBoundingClientRect();
     const clickX = e.clientX - cardRect.left;
     if (clickX > cardRect.width / 2) {
-      setFlipped((prev) => !prev); // flip only if right side clicked
+      setFlipped((prev) => !prev);
     }
   };
+
+  useEffect(() => {
+    if (flipped) {
+      setTimeout(() => {
+        audioRef.current.volume = 0.7;
+        audioRef.current.play();
+      }, 4000)
+    } else {
+      audioRef.current.pause();
+      audioRef.current.currentTime = 0;
+    }
+  }, [flipped])
 
   return (
     <Box
@@ -85,21 +101,63 @@ const PoemCard = () => {
             overflow: "hidden",
             boxShadow: "0 8px 32px 0 rgba(0, 0, 0, 0.2)",
             display: "flex",
+            flexDirection: "column", // stack items vertically
             alignItems: "center",
-            justifyContent: "center",
+            justifyContent: "flex-start", // content starts from top
             backgroundImage: `url(${frontCard})`,
             color: "#53565b",
-            fontSize: "1.1rem",
-            fontWeight:"bold",
-            
+            fontSize: "1rem",
+            fontWeight: "bold",
             backfaceVisibility: "hidden",
             transform: "rotateY(180deg)",
-            px: 3,
+            px: 2,
+            pt: 2, // padding top
             textAlign: "center",
+            whiteSpace: "pre-wrap", // keeps poem line breaks
+            gap: "1rem",
           }}
         >
-          🌸 This is the back side.
-          Your full poem can go here with glass effect ✨
+          <audio ref={audioRef} src={poem1} preload="auto" />
+
+          {/* <IconButton
+            disableTouchRipple
+            disableRipple
+            disableFocusRipple
+            sx={{
+              position: "absolute",
+              top: "1rem",
+              left: "1rem",
+              backdropFilter: "blur(6px)",
+              border: "0.1rem solid rgba(255, 255, 255, 0.3)",
+              borderRadius: "2rem",
+              p: "0.2rem",
+              "&:focus": {
+                outline: "none!important",
+                boxShadow: "none!important",
+              },
+            }}
+            onClick={handlePlayClick}
+          >
+            {!isPlaying ? (
+              <VolumeMuteIcon sx={{ fontSize: "2rem" }} />
+            ) : (
+              <VolumeDownAltIcon sx={{ fontSize: "2rem" }} />
+            )}
+          </IconButton> */}
+
+          {/* Poem content below */}
+          {flipped && (
+            <TypeAnimation
+              sequence={[POEMS_FOR_HER["2025-09-18"], 2000]} // type the poem, wait 2s
+              speed={185} // slow dramatic typing
+              style={{
+                display: "block",
+                whiteSpace: "pre-wrap",
+                marginTop: "4rem", // leave space below the button
+              }}
+              cursor={true} // blinking cursor
+            />
+          )}
         </Box>
       </motion.div>
     </Box>
@@ -107,4 +165,3 @@ const PoemCard = () => {
 };
 
 export default PoemCard;
-
