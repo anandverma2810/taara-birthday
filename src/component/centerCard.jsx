@@ -2,7 +2,7 @@ import { Box, IconButton, Stack } from '@mui/material';
 import BirthdayCounter from './birthdayCounter';
 import ChangingCaption from './changingCaption';
 import PlayIcon from '@mui/icons-material/PlayCircleOutline';
-import audio3 from "../assets/audio/audio3.m4a";
+import audio3 from "../assets/audio/play2.m4a";
 import { useEffect, useRef, useState } from 'react';
 
 const CenterCard = ({ backgroundRef }) => {
@@ -13,12 +13,12 @@ const CenterCard = ({ backgroundRef }) => {
     const handlePlayClick = (e) => {
         e.stopPropagation(); // stop card flip if inside flip card
         if (!isPlaying) {
-            backgroundRef.current.volume = 0.02;
+            backgroundRef.current.volume = 0.01;
             audioRef.current.volume = 1;
             audioRef.current.play();
             setIsPlaying(true);
         } else {
-            backgroundRef.current.volume = 0.3;
+            backgroundRef.current.volume = 0.1;
             audioRef.current.pause();
             audioRef.current.currentTime = 0;
             setIsPlaying(false);
@@ -29,7 +29,7 @@ const CenterCard = ({ backgroundRef }) => {
     useEffect(() => {
         const audioEl = audioRef.current;
         const handleEnded = () => {
-            backgroundRef.current.volume = 0.3;
+            backgroundRef.current.volume = 0.1;
             setIsPlaying(false);
         };
 

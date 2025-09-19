@@ -15,7 +15,7 @@ function App() {
 
   const handleStartMusic = () => {
     if (audioRef.current) {
-      audioRef.current.volume = 0.3;
+      audioRef.current.volume = 0.1;
       audioRef.current.play().catch(() => {
         console.log("Autoplay blocked, needs user interaction");
       });
@@ -24,7 +24,7 @@ function App() {
 
   const handleAudioVolume = () => {
     if (audioRef.current) {
-      audioRef.current.volume = 0.05;
+      audioRef.current.volume = 0.01;
     }
   }
 
@@ -54,7 +54,7 @@ function App() {
           >
             <Card key={1} isActive={active === 1} onClick={() => {
               setActive(1);
-              audioRef.current.volume = 0.3;
+              audioRef.current.volume = 0.1;
             }}>
               <CenterCard backgroundRef={audioRef} />
             </Card>

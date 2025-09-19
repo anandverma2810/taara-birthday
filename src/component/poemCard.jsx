@@ -1,8 +1,10 @@
-import backgroundCard from "../assets/images/background.jpeg";
+import backgroundCard from "../assets/images/background2.jpeg";
+import tulip from "../assets/images/tulip.png";
+
 import frontCard from "../assets/images/front.jpeg";
 import VolumeDownAltIcon from "@mui/icons-material/VolumeDownAlt";
 import VolumeMuteIcon from "@mui/icons-material/VolumeMute";
-import poem1 from "../assets/audio/poem1.m4a";
+import poem1 from "../assets/audio/poem2.m4a";
 
 import React, { useEffect, useRef, useState } from "react";
 import { Box, IconButton } from "@mui/material";
@@ -25,7 +27,7 @@ const PoemCard = ({ _flipped, backgroundRef }) => {
   useEffect(() => {
     if (flipped) {
       setTimeout(() => {
-        audioRef.current.volume = 0.7;
+        audioRef.current.volume = 0.1;
         audioRef.current.play();
       }, 4000)
     } else {
@@ -148,7 +150,7 @@ const PoemCard = ({ _flipped, backgroundRef }) => {
           {/* Poem content below */}
           {flipped && (
             <TypeAnimation
-              sequence={[POEMS_FOR_HER["2025-09-18"], 2000]} // type the poem, wait 2s
+              sequence={[POEMS_FOR_HER["2025-09-19"], 2000]} // type the poem, wait 2s
               speed={185} // slow dramatic typing
               style={{
                 display: "block",
@@ -158,6 +160,13 @@ const PoemCard = ({ _flipped, backgroundRef }) => {
               cursor={true} // blinking cursor
             />
           )}
+
+          <Box component={"img"} src={tulip} sx={{
+            position: "absolute",
+            bottom: "1rem",
+            width: "8rem",
+            height: "15rem"
+          }} />
         </Box>
       </motion.div>
     </Box>
