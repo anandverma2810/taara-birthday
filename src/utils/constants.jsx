@@ -32,5 +32,21 @@ The universe whispers, it feels the same.
 Three days remain, and soon you’ll see,
 How much your presence has meant to me.
 You’re not just a thought that passes away,
-You’re the light that stays, come night or day.`
+You’re the light that stays, come night or day.`,
+
+
+    "2025-09-20": `Two days more, and the world will cheer,
+For the soul it’s been waiting to celebrate here.
+The calendar flips, the hours pass slow,
+But excitement builds more than you’ll ever know.
+
+You may laugh when I say you’re heaven’s art,
+But I can’t deny what I feel in my heart.
+Perhaps it’s destiny, perhaps just chance,
+But knowing you’s been life’s sweetest dance.
+
+Two days remain, and I can’t help but say,
+Your birthday feels more like a holiday.
+Not just for the world, though it shines because of you—
+But for me… because I’m the luckiest to have you 💖`
 };
