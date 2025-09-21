@@ -69,7 +69,7 @@ const CenterCard = ({ backgroundRef }) => {
                 sx={{
                     perspective: "1500px", // needed for 3D flip
                     width: "45rem",
-                    height: "30rem",
+                    height: "23rem",
                 }}
             >
                 <Box
@@ -106,7 +106,7 @@ const CenterCard = ({ backgroundRef }) => {
                     >
                         <BirthdayCounter />
                         <ChangingCaption />
-                        <IconButton
+                        {/* <IconButton
                             onClick={handlePlayClick}
                             disableTouchRipple
                             disableRipple
@@ -129,7 +129,7 @@ const CenterCard = ({ backgroundRef }) => {
 
                             }}
                             />
-                        </IconButton>
+                        </IconButton> */}
                     </Box>
 
                     {/* BACK SIDE */}
