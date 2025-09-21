@@ -48,5 +48,26 @@ But knowing you’s been life’s sweetest dance.
 Two days remain, and I can’t help but say,
 Your birthday feels more like a holiday.
 Not just for the world, though it shines because of you—
-But for me… because I’m the luckiest to have you 💖`
+But for me… because I’m the luckiest to have you 💖`,
+
+
+"2025-09-21": `Two days remain, the hush begins,
+A quiet before the joy that spins.
+The world leans forward, time holds still,
+Awaiting the glow that only she will fill.
+
+The dawn feels brighter, the moon more kind,
+As if the universe has one thought in mind:
+To honor the soul who makes life sweet,
+A heart so pure, so rare, so complete.
+
+Two days away, and whispers rise,
+The stars prepare their twinkling skies.
+For when her day at last is near,
+Even heaven will lean close to hear.
+
+A melody forms, so soft, so true,
+A celebration built only for you.
+Two days remain, yet the truth is clear—
+The world grows brighter because you are here.`
 };

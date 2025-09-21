@@ -1,10 +1,10 @@
-import backgroundCard from "../assets/images/background3.jpeg";
+import backgroundCard from "../assets/images/background4.jpeg";
 import tulip from "../assets/images/liz.png";
 
 import frontCard from "../assets/images/front.jpeg";
 import VolumeDownAltIcon from "@mui/icons-material/VolumeDownAlt";
 import VolumeMuteIcon from "@mui/icons-material/VolumeMute";
-import poem1 from "../assets/audio/poem3.m4a";
+import poem1 from "../assets/audio/poem4.m4a";
 
 import React, { useEffect, useRef, useState } from "react";
 import { Box, IconButton } from "@mui/material";
@@ -150,7 +150,7 @@ const PoemCard = ({ _flipped, backgroundRef }) => {
           {/* Poem content below */}
           {flipped && (
             <TypeAnimation
-              sequence={[POEMS_FOR_HER["2025-09-20"], 2000]} // type the poem, wait 2s
+              sequence={[POEMS_FOR_HER["2025-09-21"], 2000]} // type the poem, wait 2s
               speed={185} // slow dramatic typing
               style={{
                 display: "block",

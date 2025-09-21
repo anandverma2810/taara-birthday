@@ -1,4 +1,4 @@
-import backgroundVideo from "./assets/videos/background.mp4";
+import backgroundVideo from "./assets/videos/default.mp4";
 import "./App.css";
 import { Box, Stack } from "@mui/material";
 import CenterCard from "./component/centerCard";
