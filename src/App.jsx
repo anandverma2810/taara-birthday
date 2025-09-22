@@ -1,4 +1,4 @@
-import backgroundVideo from "./assets/videos/default.mp4";
+import backgroundVideo from "./assets/videos/background3.mp4";
 import "./App.css";
 import { Box, Stack } from "@mui/material";
 import CenterCard from "./component/centerCard";
@@ -61,7 +61,7 @@ function App() {
 
             <Card key={2} isActive={active === 2} onClick={() => {
               setActive(2);
-              handleAudioVolume();
+              // handleAudioVolume();
             }}>
               <PoemCard backgroundRef={audioRef} />
             </Card>

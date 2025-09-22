@@ -1,7 +1,7 @@
-import backgroundCard from "../assets/images/background4.jpeg";
-import tulip from "../assets/images/liz.png";
+import backgroundCard from "../assets/images/background5.png";
+import tulip from "../assets/images/clawn.png";
 
-import frontCard from "../assets/images/front.jpeg";
+import frontCard from "../assets/images/page.jpeg";
 import VolumeDownAltIcon from "@mui/icons-material/VolumeDownAlt";
 import VolumeMuteIcon from "@mui/icons-material/VolumeMute";
 import poem1 from "../assets/audio/poem4.m4a";
@@ -24,17 +24,17 @@ const PoemCard = ({ _flipped, backgroundRef }) => {
     }
   };
 
-  useEffect(() => {
-    if (flipped) {
-      setTimeout(() => {
-        audioRef.current.volume = 0.1;
-        audioRef.current.play();
-      }, 4000)
-    } else {
-      audioRef.current.pause();
-      audioRef.current.currentTime = 0;
-    }
-  }, [flipped])
+  // useEffect(() => {
+  //   if (flipped) {
+  //     setTimeout(() => {
+  //       audioRef.current.volume = 0.1;
+  //       audioRef.current.play();
+  //     }, 4000)
+  //   } else {
+  //     audioRef.current.pause();
+  //     audioRef.current.currentTime = 0;
+  //   }
+  // }, [flipped])
 
   return (
     <Box
@@ -112,14 +112,14 @@ const PoemCard = ({ _flipped, backgroundRef }) => {
             fontWeight: "bold",
             backfaceVisibility: "hidden",
             transform: "rotateY(180deg)",
-            px: 2,
-            pt: 2, // padding top
+            pl: 5,
+            pt:5, // padding top
             textAlign: "center",
             whiteSpace: "pre-wrap", // keeps poem line breaks
             gap: "1rem",
           }}
         >
-          <audio ref={audioRef} src={poem1} preload="auto" />
+          {/* <audio ref={audioRef} src={poem1} preload="auto" /> */}
 
           {/* <IconButton
             disableTouchRipple
@@ -150,7 +150,7 @@ const PoemCard = ({ _flipped, backgroundRef }) => {
           {/* Poem content below */}
           {flipped && (
             <TypeAnimation
-              sequence={[POEMS_FOR_HER["2025-09-21"], 2000]} // type the poem, wait 2s
+              sequence={[POEMS_FOR_HER["2025-09-22"], 2000]} // type the poem, wait 2s
               speed={185} // slow dramatic typing
               style={{
                 display: "block",
@@ -165,7 +165,7 @@ const PoemCard = ({ _flipped, backgroundRef }) => {
             position: "absolute",
             bottom: "1rem",
             width: "8rem",
-            height: "8rem"
+            height: "12rem"
           }} />
         </Box>
       </motion.div>

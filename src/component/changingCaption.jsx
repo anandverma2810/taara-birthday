@@ -46,7 +46,7 @@ export default function CuteTitle() {
                     style={{
                         fontSize: "2rem",
                         fontWeight: "bold",
-                        color: "#d1d0cd"
+                        color: "white"
                     }}
                 />
             ) : (
@@ -56,7 +56,7 @@ export default function CuteTitle() {
                         fontSize: "1.6rem",
                         fontWeight: "bold",
                         opacity: 0,
-                        color: "#d1d0cd",
+                        color: "white",
                         animation: "fadeInOut 5s ease-in-out",
                     }}
                 >
