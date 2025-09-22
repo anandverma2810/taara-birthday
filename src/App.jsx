@@ -11,13 +11,13 @@ function App() {
   const [view, setView] = useState("before"); // "before" | "crack" | "on"
 
   useEffect(() => {
-    const now = Date.now();
+    // const now = Date.now();
 
-    if (now < deadline) {
-      // before deadline, just show BeforeBirthday
-      setView("before");
-      return;
-    }
+    // if (now < deadline) {
+    //   // before deadline, just show BeforeBirthday
+    //   setView("before");
+    //   return;
+    // }
 
     // After deadline sequence
     setView("before"); // start with before
