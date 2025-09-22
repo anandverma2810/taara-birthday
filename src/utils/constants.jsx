@@ -71,7 +71,7 @@ A celebration built only for you.
 One days remain, yet the truth is clear—
 The world grows brighter because you are here.`,
 
-"2025-09-22": `Tomorrow arrives and the candles will glow,
+    "2025-09-22": `Tomorrow arrives and the candles will glow,
 A day the world has been waiting to know.
 The skies seem brighter, the stars prepare,
 To honor a soul beyond compare.
@@ -86,7 +86,7 @@ The kindness, the wonder, the beauty in you.
 A day of joy, a day to shine,
 For a soul so radiant, rare, divine. 🌸✨`,
 
-"birthday": `I still remember the cafeteria’s hum,
+    "birthday": `I still remember the cafeteria’s hum,
 The clinking of cups, the chatter, the drum
 Of footsteps and laughter, ordinary noise
 Until the world paused and you became my choice.
@@ -109,9 +109,8 @@ It was your laughter, so gentle, so kind.
 The way the streetlights bent to your glow,
 The night itself seemed to already know,
 That moments with you were not fleeting sparks,
-But stars engraving themselves in my heart.
-
-Since then, every day has been a page,
+But stars engraving themselves in my heart.`,
+    "birthday1": `Since then, every day has been a page,
 Written with warmth defying age.
 Your voice is the violin the winds long to play,
 Your presence... the dawn of a brighter day.
@@ -130,4 +129,5 @@ And if tomorrow holds stories untold,
 I’ll treasure each one, more precious than gold.
 For meeting you was the fate I won’t forget
 A timeless truth... you are not a fossil yet`
+
 };

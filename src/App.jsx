@@ -1,76 +1,79 @@
-import backgroundVideo from "./assets/videos/background3.mp4";
+import { Box, Fade } from "@mui/material";
 import "./App.css";
-import { Box, Stack } from "@mui/material";
-import CenterCard from "./component/centerCard";
-import { useEffect, useRef, useState } from "react";
-import Card from "./component/card";
-import PoemCard from "./component/poemCard";
-import bgMusic1 from "./assets/audio/bgMusic1.mp3";
-
-import TeaseContent from "./component/teaseContent";
+import RightPageBook from "./component/book";
+import BeforeBirthday from "./pages/beforeBirthday";
+import OnBirthday from "./pages/onBirthday";
+import BirthdayCrack from "./pages/birthdayCrack";
+import { useEffect, useState } from "react";
 
 function App() {
-  const [active, setActive] = useState(1);
-  const audioRef = useRef(null);
-
-  const handleStartMusic = () => {
-    if (audioRef.current) {
-      audioRef.current.volume = 0.1;
-      audioRef.current.play().catch(() => {
-        console.log("Autoplay blocked, needs user interaction");
-      });
-    }
-  };
-
-  const handleAudioVolume = () => {
-    if (audioRef.current) {
-      audioRef.current.volume = 0.01;
-    }
-  }
+  const deadline = new Date("2025-09-23T00:00:00").getTime();
+  const [view, setView] = useState("before"); // "before" | "crack" | "on"
 
   useEffect(() => {
-    handleStartMusic();
-  }, [])
+    const now = Date.now();
+
+    if (now < deadline) {
+      // before deadline, just show BeforeBirthday
+      setView("before");
+      return;
+    }
+
+    // After deadline sequence
+    setView("before"); // start with before
+
+    // After 30s → switch to crack
+    const crackTimer = setTimeout(() => {
+      setView("crack");
+    }, 10000);
+
+    // After 60s → switch to on
+    const onTimer = setTimeout(() => {
+      setView("on");
+    }, 60000);
+
+    return () => {
+      clearTimeout(crackTimer);
+      clearTimeout(onTimer);
+    };
+  }, [deadline]);
 
   return (
-    <div className="app">
-      {true ? (
-        <Box>
-          <video autoPlay loop muted playsInline className="background-video">
-            <source src={backgroundVideo} type="video/mp4" />
-          </video>
+    <>
+      <Box
+        sx={{
+          position: "relative",
+          width: "100%",
+          height: "100%",
+        }}
+      >
+        {view === "before" && <BeforeBirthday />}
 
-          <audio ref={audioRef} src={bgMusic1} preload="auto" loop />
-
-          <Stack
+        <Fade in={view === "crack"} timeout={4000} unmountOnExit>
+          <Box
             sx={{
-              display: "flex",
-              justifyContent: "flex-start",
-              alignItems: "center",
-              width: "100vw",
-              height: "100vh",
-              pt: "3rem",
+              position: "absolute",
+              width: "100%",
+              height: "100%",
             }}
           >
-            <Card key={1} isActive={active === 1} onClick={() => {
-              setActive(1);
-              audioRef.current.volume = 0.1;
-            }}>
-              <CenterCard backgroundRef={audioRef} />
-            </Card>
+            <BirthdayCrack />
+          </Box>
+        </Fade>
 
-            <Card key={2} isActive={active === 2} onClick={() => {
-              setActive(2);
-              // handleAudioVolume();
-            }}>
-              <PoemCard backgroundRef={audioRef} />
-            </Card>
-          </Stack>
-        </Box>
-      ) : (
-        <TeaseContent />
-      )}
-    </div>
+        <Fade in={view === "on"} timeout={6000} unmountOnExit>
+          <Box
+            sx={{
+              position: "absolute",
+              width: "100%",
+              height: "100%",
+            }}
+          >
+            <OnBirthday />
+          </Box>
+        </Fade>
+      </Box>
+    </>
   );
 }
 

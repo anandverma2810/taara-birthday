@@ -12,8 +12,8 @@ import { motion } from "framer-motion";
 import { POEMS_FOR_HER } from "../utils/constants";
 import { TypeAnimation } from "react-type-animation";
 
-const PoemCard = ({ _flipped, backgroundRef }) => {
-  const [flipped, setFlipped] = useState(_flipped);
+const PoemCard = ({ children }) => {
+  const [flipped, setFlipped] = useState(false);
   const audioRef = useRef(null);
 
   const handleClick = (e) => {
@@ -40,8 +40,8 @@ const PoemCard = ({ _flipped, backgroundRef }) => {
     <Box
       sx={{
         perspective: "1500px",
-        width: "28rem",
-        height: "40rem",
+        width: "13rem",
+        height: "20rem",
         cursor: "pointer",
         position: "relative",
       }}
@@ -113,54 +113,15 @@ const PoemCard = ({ _flipped, backgroundRef }) => {
             backfaceVisibility: "hidden",
             transform: "rotateY(180deg)",
             pl: 5,
-            pt:5, // padding top
+            pt: 5, // padding top
             textAlign: "center",
             whiteSpace: "pre-wrap", // keeps poem line breaks
             gap: "1rem",
           }}
         >
-          {/* <audio ref={audioRef} src={poem1} preload="auto" /> */}
-
-          {/* <IconButton
-            disableTouchRipple
-            disableRipple
-            disableFocusRipple
-            sx={{
-              position: "absolute",
-              top: "1rem",
-              left: "1rem",
-              backdropFilter: "blur(6px)",
-              border: "0.1rem solid rgba(255, 255, 255, 0.3)",
-              borderRadius: "2rem",
-              p: "0.2rem",
-              "&:focus": {
-                outline: "none!important",
-                boxShadow: "none!important",
-              },
-            }}
-            onClick={handlePlayClick}
-          >
-            {!isPlaying ? (
-              <VolumeMuteIcon sx={{ fontSize: "2rem" }} />
-            ) : (
-              <VolumeDownAltIcon sx={{ fontSize: "2rem" }} />
-            )}
-          </IconButton> */}
-
-          {/* Poem content below */}
-          {flipped && (
-            <TypeAnimation
-              sequence={[POEMS_FOR_HER["2025-09-22"], 2000]} // type the poem, wait 2s
-              speed={185} // slow dramatic typing
-              style={{
-                display: "block",
-                whiteSpace: "pre-wrap",
-                marginTop: "4rem", // leave space below the button
-              }}
-              cursor={true} // blinking cursor
-            />
-          )}
-
+          {
+            flipped && children
+          }
           <Box component={"img"} src={tulip} sx={{
             position: "absolute",
             bottom: "1rem",
