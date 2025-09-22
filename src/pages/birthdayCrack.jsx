@@ -1,5 +1,5 @@
 import { Box } from "@mui/material";
-import fire from "../assets/videos/fireCracker.mp4";
+import fire from "../assets/videos/fire.mp4";
 import cracker from "../assets/audio/cracker.mp3";
 import { useEffect, useRef, useState } from "react";
 
